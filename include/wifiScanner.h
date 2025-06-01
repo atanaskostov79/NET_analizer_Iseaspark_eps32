@@ -6,6 +6,7 @@
 
 #include <Adafruit_ST7789.h>
 
-void wifiScanner(Adafruit_ST7789 &tft);
+void wifiScan(Adafruit_ST7789 &tft);
+
 
 #endif
