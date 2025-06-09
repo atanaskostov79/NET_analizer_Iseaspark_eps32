@@ -5,7 +5,7 @@
 #include "wifiScanner.h"
 #include "systemInfo.h"
 #include "statusBar.h"
-
+#include "lanLink.h"
 #include "my_image.h"
 
 extern Adafruit_ST7789 tft;
@@ -15,6 +15,7 @@ int menuIndex = 0;
 
 const char* menuItems[] = {
     "Wi-Fi Scan",
+    "LAN Link",
     "System Info",
     "Settings"
 };
@@ -54,6 +55,10 @@ void handleMenu() {
             wifiScan(tft);
             currentMenu = MENU_MAIN;
             break;
+        case MENU_LAN:
+            lanLink(tft);
+            currentMenu = MENU_MAIN;
+            break;
         case MENU_SYSINFO:
             showSystemInfo(tft);
             currentMenu = MENU_MAIN;
@@ -76,9 +81,11 @@ void handleButtonB() {
     if (currentMenu == MENU_MAIN) {
         switch (menuIndex) {
             case 0: currentMenu = MENU_WIFI; break;
-            case 1: currentMenu = MENU_SYSINFO; break;
+            case 1: currentMenu = MENU_LAN; break;
+            case 2: currentMenu = MENU_SYSINFO; break;
 
-            case 2: /* Settings */ break;
+
+            case 3: /* Settings */ break;
         }
         handleMenu();
     }

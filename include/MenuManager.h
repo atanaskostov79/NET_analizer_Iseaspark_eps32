@@ -5,6 +5,7 @@
 enum MenuState {
     MENU_MAIN,
     MENU_WIFI,
+    MENU_LAN,
     MENU_SYSINFO,
 
     MENU_BACK

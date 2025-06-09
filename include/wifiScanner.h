@@ -5,6 +5,7 @@
 #define WIFI_SCANNER_H
 
 #include <Adafruit_ST7789.h>
+#define BUTTON_PIN 0
 
 void wifiScan(Adafruit_ST7789 &tft);
 
